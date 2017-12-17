@@ -24,13 +24,14 @@ unauthenticated :user do
   end
 
   resources :courses do 
-     resources :comments
-   end
+  resources :comments
+  end
 
   resources :messages
   resources :conversations
   resources :courses
   resources :commenters
+  resources :comments
   resources :authors
   resources :searches
 
