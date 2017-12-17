@@ -33,6 +33,10 @@ end
 @comment = Comment.new(comment_params)
 @comment.commenter = current_commenter
 
+@course = Course.find(params[:course_id])
+@comment = @course.comments.create(params[:comment].permit(:content))
+redirect_to course_path(@course)
+
 
     respond_to do |format|
       if @comment.save
@@ -62,7 +66,12 @@ end
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
+    @course = Course.find(params[:course_id])
+    @comment = @course.comments.find(params[:id])
+    redirect_to course_path(@course)
     @comment.destroy
+
+    
     respond_to do |format|
       format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }

@@ -1,36 +1,17 @@
 
-
-
-<% if !flash[:notice].blank? %>
-  <div class="alert alert-info">
-  <%= flash[:notice] %>
-  </div>
-<% end %>
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Titre</th>
-      <th>Matière</th>
-      <th>Fac</th>
-      <th>Année</th>
-      <th>Download Link</th>
-
-    </tr>
-  </thead>
-  <tbody>
     <% @courses.each do |course| %>
-      <tr>
-        <td><%= course.titre %></td>
-        <td><%= course.matiere %></td>
-        <td><%= course.fac %></td>
-        <td><%= course.annee %></td>
+     
+       <%= course.titre %>
+        <%= course.matiere %>
+      <%= course.fac %>
+        <%= course.annee %>
 
-        <td><%= link_to "Download Course", course.pdf_url %></td>
+        <%= link_to "Download Course", course.pdf_url %>
 
-<td> <%= button_to "Delete",  course, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{course.pdf_url}?" %></td> 
+ <%= button_to "Delete",  course, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{course.pdf_url}?" %> 
      
 
-<td> 
+
 <div class = "caption" styles="text-align:center;">
 <%= link_to like_course_path(course), class: "like", method: :put do %>
 <button type="button" class="btn btn-info" aria-label="Left Align">
@@ -39,6 +20,7 @@
 </button>
 <%end%>
 
+
 <%= link_to unlike_course_path(course), class: "like", method: :put do %>
 <button type="button" class="btn btn-info" aria-label="Left Align">
 <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
@@ -46,11 +28,20 @@
 </button>
 <%end%>
 </div>
-</td>
-</tr> 
-  
-</tbody>
-</table>
+ 
+
+ 
+ <h2>
+  <%= @course.comments.count %> Commentaires</h2>
+  <%=render @course.comments %>
+  <h3>Ajouter un commentaire</h3>
+  <%= render 'comments/frm' %>
+
+
+
 
 
 <% end -%>
+
+
+
