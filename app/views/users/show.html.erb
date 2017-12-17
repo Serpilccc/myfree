@@ -1,0 +1,44 @@
+
+<h1>Bienvenue</h1>
+
+<h2>Voici ton profil</h2>
+
+<%=simple_form_for(@user) do |f|%>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+ 
+<p>
+  <strong>Fac:</strong>
+  <%= @user.fac %>
+</p>
+
+
+<p>
+  <strong>Formation:</strong>
+  <%= @user.formation %>
+</p>
+
+<p>
+  <strong>Niveau:</strong>
+  <%= @user.niveau %>
+
+    <strong>Image:</strong>
+  <%= @user.image %>
+ <%= f. input :image , as: :file%>
+<% end -%>
+
+<%= link_to "Nouveau document", new_course_path, class: "btn btn-primary" %>
+
+ <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+
+  <%= link_to "Voir ses documents", course_path, class: "btn btn-primary" %>
+
+   <%= link_to "Messenger", new_conversation_path %>
+
+
+
+
+

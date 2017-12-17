@@ -1,0 +1,16 @@
+<h1>Search</h1>
+
+<%= form_for @search, html: {class: "pure-form"} do |s| %>
+
+<div class ="field">
+<%= s.label :categorie %><br/>
+<%= s.select :categorie, options_for_select(@categories), :include_blank => true%>
+</div>
+
+
+<div class ="actions"><%= s.submit "Search", class: "pure-button pure-button-primary" %></div>
+
+
+<% end -%>
+
+<p><%= link_to "Back", courses_patch %></p>

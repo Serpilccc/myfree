@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titre: MyString
+  matiere: MyString
+  fac: MyString
+  annee: MyString
+
+two:
+  titre: MyString
+  matiere: MyString
+  fac: MyString
+  annee: MyString

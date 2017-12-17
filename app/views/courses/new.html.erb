@@ -1,0 +1,34 @@
+<h1>New Course</h1>
+
+
+
+<% if !@course.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @courses.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="well">
+  <%= form_for @course, html: { multipart: true } do |f| %>
+    <%= f.label :titre %>
+    <%= f.text_field :titre %>
+
+    <%= f.label :matière %>
+    <%= f.text_field :matiere %>
+
+    <%= f.label :fac %>
+    <%= f.text_field :fac %>
+
+    <%= f.label :année %>
+    <%= f.text_field :annee %>
+
+    <%= f.label :pdf %>
+    <%= f.file_field :pdf %>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+  <%= link_to 'Back', courses_path %>
+</div>

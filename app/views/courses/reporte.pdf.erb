@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<thead>Title</thead>
+				<thead>Title</thead>
+			</tr>
+		</thead>
+
+		<tbody>
+			<%= @courses.each do |course| %>
+			<tr>
+				<td><%= course.titre %></td>
+			</tr>
+			<%end%>
+
+		</tbody>
+	</table>
+</body>
+</html>
