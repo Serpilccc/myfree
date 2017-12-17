@@ -1,4 +1,4 @@
-class Search < ApplicationRecord::Base
+class Search < ApplicationRecord
 
 def courses_search
 
