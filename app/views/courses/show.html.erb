@@ -9,7 +9,7 @@
         <h2 class="page-header text-center">Ton document</h2>
 
 
-
+<% @courses.each do |course| %>
 
 	 <div class="form-group">
 	 
@@ -35,7 +35,7 @@
  <center><%=  link_to 'Edit', edit_course_path(@course),  class: "btn btn-primary", style: "weight:50px"%>
  <%=  link_to 'Back', courses_path,  class: "btn btn-primary" %></center>
 
-
+<% end -%>
 
 </div>
 </div>
