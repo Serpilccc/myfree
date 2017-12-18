@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+  <title></title>
 </head>
+
 <body>
-<header>
-        <div id="mobile-menu-close">
-            <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="app/views/home/index.html.erb">Accueil</a>
-            </li>
-            <li>
-                <a href="app/views/courses/_form/html.erb">Cours</a>
-            </li>
-            <li>
-                <a href="app/views/messsages/_message.html.erb">Messagerie</a>
-            </li>
-            <li>
-                <a href="app/views/authors/index.html.erb">Profil</a>
-            </li>
-            <li>
-                <a href="home#index.html.erb">Contact</a>
-            </li>
-            <li>            
-    <%= link_to "Poster un cours", new_course_path %>
-  </li>
-        </ul>
-        
-       <ul>
-        <% if user_signed_in? %>
-  <li>
-    <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete %>
-  </li>
-  <li>
-    <%= current_user.email %>
-  </li>
-  <li>
-    <%= link_to "Edit account", edit_user_registration_path %>
-  </li>
-  <% else %>
-  <li>
-    <%= link_to "S'inscrire", new_user_registration_path %>
-  </li>
-   <li>
-    <%= link_to "Se connecter", new_user_session_path %>
-  </li>
-  <li>
-    <%= link_to "Se connecter via facebook", user_facebook_omniauth_authorize_path %>
-  </li>
-  <% end %>
-</ul>
-    </header>
+  <header>
+
+    <div id="mobile-menu-close">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+
+    <ul id="menu" class="shadow">
+      <li>
+        <%= link_to "Accueil", homes_path %>
+      </li>
+
+      <li>
+        <%= link_to "Cours", courses_path %>
+      </li>
+
+      <li>
+        <%= link_to "Messagerie", users_path %>
+      </li>
+
+      <li>
+        <%= link_to "Profil"%>
+      </li>
+
+      <li>
+        <a href="homes#contact">Contact</a>
+      </li>
+
+      <li>            
+        <%= link_to "Poster un cours", new_course_path %>
+      </li>
+    </ul>
+
+    <ul>
+      <% if user_signed_in? %>
+
+      <li>
+        <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete %>
+      </li>
+
+      <li>
+        <%= current_user.email %>
+      </li>
+
+      <li>
+        <%= link_to "Edit account", edit_user_registration_path %>
+      </li>
+
+      <% else %>
+
+      <li>
+        <%= link_to "S'inscrire", new_user_registration_path %>
+      </li>
+
+      <li>
+        <%= link_to "Se connecter", new_user_session_path %>
+      </li>
+
+      <li>
+        <%= link_to "Se connecter via facebook", user_facebook_omniauth_authorize_path %>
+      </li>
+
+      <% end %>
+    </ul>
+
+  </header>
+
 </body>
 </html>

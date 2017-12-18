@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-root 'home#index'
+root 'homes#index'
 
  resources :courses do 
     member do
@@ -37,7 +37,7 @@ unauthenticated :user do
 
  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resources :home
+  resources :homes
 
   resources :users
 
