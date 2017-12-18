@@ -1,24 +1,53 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Titre:</strong>
-  <%= @course.titre %>
-</p>
+  <div class="row">
 
-<p>
-  <strong>Matiere:</strong>
-  <%= @course.matiere %>
-</p>
+    <div class="col-sm-4 col-sm-offset-4">
+    	<div class="panel panel-default" id="i">
 
-<p>
-  <strong>Fac:</strong>
-  <%= @course.fac %>
-</p>
+      <div class="light-well">
+        <h2 class="page-header text-center">Ton document</h2>
 
-<p>
-  <strong>Annee:</strong>
-  <%= @course.annee %>
-</p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+
+
+	 <div class="form-group">
+	 
+ <h3>Titre:  <%= @course.titre %></h3>
+
+
+
+
+  <h3>Matiere:<%= @course.matiere %></h3>
+ 
+
+
+
+  <h3>Fac:<%= @course.fac %></h3>
+
+
+
+  <h3>Annee:<%= @course.annee %>
+</h3>
+
+
+
+ <center><%=  link_to 'Edit', edit_course_path(@course),  class: "btn btn-primary", style: "weight:50px"%>
+ <%=  link_to 'Back', courses_path,  class: "btn btn-primary" %></center>
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<style type="">
+	#i{
+		margin-top: 20%;
+		padding-left: 10%;
+		padding-right: 10%;
+
+	
+</style>

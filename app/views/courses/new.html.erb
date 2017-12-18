@@ -1,6 +1,8 @@
-<h1>New Course</h1>
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="light-well">
+        <h2 class="page-header text-center">Nouveau document</h2>
 
 <% if !@course.errors.empty? %>
   <div class="alert alert-error">
@@ -12,23 +14,37 @@
   </div>
 <% end %>
 
+
+
 <div class="well">
   <%= form_for @course, html: { multipart: true } do |f| %>
-    <%= f.label :titre %>
-    <%= f.text_field :titre %>
 
-    <%= f.label :matière %>
-    <%= f.text_field :matiere %>
+    <div class="form-group">
+            <%= f.text_field :titre, autofocus: true, placeholder: "titre", class: "form-control" %>
+          </div>
 
-    <%= f.label :fac %>
-    <%= f.text_field :fac %>
 
-    <%= f.label :année %>
-    <%= f.text_field :annee %>
+<div class="form-group">
+            <%= f.text_field :matiere, autofocus: true, placeholder: "matière", class: "form-control" %>
+          </div>
 
-    <%= f.label :pdf %>
-    <%= f.file_field :pdf %>
-    <%= f.submit "Save", class: "btn btn-primary" %>
+          <div class="form-group">
+            <%= f.text_field :fac, autofocus: true, placeholder: "fac", class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :annee, autofocus: true, placeholder: "année", class: "form-control" %>
+          </div><br>
+
+  
+    <center><%= f.file_field :pdf %><center><br>
+    <center><%= f.submit "Save", class: "btn btn-primary" %>
+      <%=  link_to 'Back', courses_path,  class: "btn btn-primary" %></center>
   <% end %>
-  <%= link_to 'Back', courses_path %>
+
+</div>
+
+</div>
+</div>
+</div>
 </div>

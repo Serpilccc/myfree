@@ -1,44 +1,51 @@
+<style>
 
-<h1>Bienvenue</h1>
 
-<h2>Voici ton profil</h2>
+.card1 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin-top: 150px;
+  margin-left: 40%;
+  text-align: center;
+  font-family: arial;
+}
+
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+
+<div>
 
 <%=simple_form_for(@user) do |f|%>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<div class="card1">
+  <h1><Ton profil</h1>
+  <h3><%= @user.username %></h3>
+  <p>Email:<%= @user.email %> </p>
+  <p>Formation: <%= @user.formation %></p>
+   <p>Fac: <%= @user.fac %></p>
+ <p>Niveau: <%= @user.niveau %></p>
+  
  
-<p>
-  <strong>Fac:</strong>
-  <%= @user.fac %>
-</p>
-
-
-<p>
-  <strong>Formation:</strong>
-  <%= @user.formation %>
-</p>
-
-<p>
-  <strong>Niveau:</strong>
-  <%= @user.niveau %>
-
-    <strong>Image:</strong>
-  <%= @user.image %>
- <%= f. input :image , as: :file%>
-<% end -%>
-
-<%= link_to "Nouveau document", new_course_path, class: "btn btn-primary" %>
-
- <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-
-  <%= link_to "Voir ses documents", course_path, class: "btn btn-primary" %>
-
-   <%= link_to "Messenger", new_conversation_path %>
-
-
+ <p><button> <%= link_to "Nouveau document", new_course_path %></button></p>
+ <p><button> <%= link_to "Voir ses documents",course_path %></button></p>
+ <% end -%>
+</div>
 
 
 
