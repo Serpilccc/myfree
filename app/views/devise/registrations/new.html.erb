@@ -45,6 +45,11 @@
             <%= f.text_field :niveau, autofocus: true, placeholder: "niveau", class: "form-control" %>
           </div>
 
+        
+          <p>photo de profil <%= f.file_field :image %></p>
+          <br>
+          </div>
+
 
           <div class="actions">
             <%= f.submit "Sign up", class: "btn btn-primary btn-lg btn-block" %>

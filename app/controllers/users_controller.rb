@@ -44,7 +44,7 @@ end
     end
 
      def user_params
-      params.require(:user).permit(:image, :username, :fac, :formation, :niveau)
+      params.require(:user).permit(:image, :username, :fac, :formation, :niveau, :email, :password)
     end
   end
 
